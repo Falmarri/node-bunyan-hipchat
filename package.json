@@ -1,0 +1,23 @@
+{
+    "name": "bunyan-hipchat",
+    "description": "Hipchat Stream for Bunyan",
+    "version": "0.2.2",
+    "author": "Mark Cavage",
+    "main": "./lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mcavage/node-bunyan-syslog.git"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "bunyan": "0.21.4",
+        "tap": "0.4.4"
+    },
+    "scripts": {
+        "test": "tap test"
+    },
+    "engines": {
+        "node": ">=0.8"
+    }
+}
