@@ -17,14 +17,17 @@ var STREAM;
 
 ///--- Tests
 
+
+
 test('create a logger', function (t) {
         STREAM = bsyslog.createBunyanStream({
                 name: 'sys_test',
-                facility: bsyslog.local0,
-                type: 'sys'
+                type: 'sys',
+		hipchatOpts : ['-r Deploy']
         });
-        t.ok(STREAM);
+	t.ok(STREAM);
         console.error(STREAM.toString());
+
 
         LOG = bunyan.createLogger({
                 name: 'systest',
@@ -32,11 +35,16 @@ test('create a logger', function (t) {
                         type: 'raw',
                         level: 'trace',
                         stream: STREAM
-                } ]
+                },
+		{
+			path : '/home/falmarri/hclog.log',
+			level: 'trace'
+		}]
         });
-        t.ok(LOG);
-        STREAM.once('connect', t.end.bind(t));
+	t.ok(LOG);
+	t.end();
 });
+
 
 
 test('write a trace record', function (t) {
@@ -76,6 +84,5 @@ test('write a fatal record', function (t) {
 
 
 test('teardown', function (t) {
-        STREAM.close();
         t.end();
 });
