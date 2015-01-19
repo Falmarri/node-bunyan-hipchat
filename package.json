@@ -1,7 +1,7 @@
 {
     "name": "bunyan-hipchat",
     "description": "Hipchat Stream for Bunyan",
-    "version": "0.2.7",
+    "version": "0.2.8",
     "author": "Falmarri",
     "main": "./lib/index.js",
     "repository": {
